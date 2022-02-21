@@ -4,21 +4,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ListComponent } from './list/list.component';
 import { DemosComponent } from './demos/demos.component';
-import {RouterModule, Routes} from "@angular/router";
 import { ResourceComponent } from './resource/resource.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatIconModule} from "@angular/material/icon";
-import {MatSidenavModule} from "@angular/material/sidenav";
-import {MatToolbarModule} from "@angular/material/toolbar";
-import {MatListModule} from "@angular/material/list";
-
-const routes: Routes = [
-  { path: '',   redirectTo: '/resource', pathMatch: 'full' },
-  { path: 'list', component: ListComponent },
-  { path: 'demo', component: DemosComponent },
-  { path: 'resource', component: ResourceComponent },
-];
-
+import {RoutingModule} from "./layout/routing.module";
+import {MaterialModule} from "./material/material.module";
 
 @NgModule({
   declarations: [
@@ -29,15 +18,12 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes),
     BrowserAnimationsModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatToolbarModule,
-    MatListModule,
+    MaterialModule,
+    RoutingModule
 
   ],
-  exports: [RouterModule],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })
