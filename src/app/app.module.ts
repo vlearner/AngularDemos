@@ -13,7 +13,7 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatListModule} from "@angular/material/list";
 
 const routes: Routes = [
-  { path: '', component: AppComponent },
+  { path: '',   redirectTo: '/resource', pathMatch: 'full' },
   { path: 'list', component: ListComponent },
   { path: 'demo', component: DemosComponent },
   { path: 'resource', component: ResourceComponent },
