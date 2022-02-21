@@ -8,13 +8,14 @@ import {MediaMatcher} from "@angular/cdk/layout";
 })
 export class ListComponent implements OnDestroy {
 
-  listTitle = 'Name';
+  listTitle = 'Example';
   mobileQuery: MediaQueryList;
 
-  fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
+  // fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
+  fillerNav = Array.from([this.listTitle]);
 
   fillerContent = Array.from(
-    {length: 30},
+    {length: 1},
     () =>
       `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
