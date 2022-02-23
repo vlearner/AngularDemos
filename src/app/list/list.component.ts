@@ -1,6 +1,13 @@
 import {ChangeDetectorRef, Component, OnDestroy} from '@angular/core';
 import {MediaMatcher} from "@angular/cdk/layout";
 
+export interface navList {
+  name: string;
+  routeLink: string;
+}
+
+const NAV_LIST: navList[] =[{name: 'Airport Search', routeLink: 'airport-search' }]
+
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -8,11 +15,13 @@ import {MediaMatcher} from "@angular/cdk/layout";
 })
 export class ListComponent implements OnDestroy {
 
-  listTitle = 'Example';
-  mobileQuery: MediaQueryList;
+  listTitle = 'Airport Search';
+  title = 'Angular Demo';
 
+  mobileQuery: MediaQueryList;
   // fillerNav = Array.from({length: 5}, (_, i) => `Nav Item ${i + 1}`);
-  fillerNav = Array.from([this.listTitle]);
+
+  NavList = NAV_LIST;
 
   fillerContent = Array.from(
     {length: 1},
@@ -23,7 +32,6 @@ export class ListComponent implements OnDestroy {
        voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
        cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`,
   );
-
   private _mobileQueryListener: () => void;
 
 
