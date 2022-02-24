@@ -1,8 +1,17 @@
 <div style="margin: 5vh;">
-  <mat-form-field class="example-form-field" appearance="legacy">
-    <mat-label>Search</mat-label>
-    <input matInput type="text" aria-label="Search">
-    <mat-icon matSuffix>search</mat-icon>
-  </mat-form-field>
+  <form>
+    <mat-form-field class="example-form-field" appearance="legacy">
+      <mat-label>Search IATA Number</mat-label>
+      <input matInput aria-label="Search" type="text" name="search" [(ngModel)]="search">
+      <mat-button-toggle  matSuffix aria-label="Submit" (click)="searchSubmit()" mat-icon-button >
+        <mat-icon>search</mat-icon>
+      </mat-button-toggle>
+    </mat-form-field>
+  </form>
+  <ng-container *ngFor="let items of data | keyvalue">
+    <p>
+      {{items.key}} - {{items.value}}
+    </p>
+  </ng-container>
 </div>
 

@@ -11,6 +11,9 @@ import {MaterialModule} from "./material/material.module";
 import { AirportSearchComponent } from './list/airport-search/airport-search.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {HttpClientModule} from "@angular/common/http";
+import {MatButtonToggleModule} from "@angular/material/button-toggle";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import {MatInputModule} from "@angular/material/input";
     MaterialModule,
     RoutingModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    HttpClientModule,
+    MatButtonToggleModule,
+    FormsModule
 
   ],
   exports: [],
