@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import {AirportSearchService} from "./airport-search.service";
 import { Subscription} from "rxjs";
-import {Airport} from "./airport";
 
 @Component({
   selector: 'app-airport-search',
@@ -15,7 +14,7 @@ export class AirportSearchComponent {
   }
   airportServiceSub: Subscription | any;
   search: string = '';
-  data: Airport[] = [];
+  data = [];
 
   searchSubmit() {
     this.airportServiceSub = this.airportService.getAirportInfo(this.search).subscribe(data => {
