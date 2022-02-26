@@ -2,7 +2,7 @@
   <form>
     <mat-form-field class="example-form-field" appearance="legacy">
       <mat-label>Search IATA Number</mat-label>
-      <input matInput aria-label="Search" type="text" name="search" [(ngModel)]="search">
+      <input matInput aria-label="Search" (keyup.enter)="keySearch()" type="text" name="search" [(ngModel)]="search">
       <mat-button-toggle  matSuffix aria-label="Submit" (click)="searchSubmit()" mat-icon-button >
         <mat-icon>search</mat-icon>
       </mat-button-toggle>

@@ -22,4 +22,8 @@ export class AirportSearchComponent {
       this.airportInfo = data;
     });
   }
+
+  keySearch() {
+    this.searchSubmit();
+  }
 }
