@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Observable} from 'rxjs';
 import {catchError, retry} from 'rxjs/operators';
+import {Airport} from "./airport";
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +23,10 @@ export class AirportSearchService {
 
   })
 
-  getAirportInfo(iata: any): Observable<any> {
+  getAirportInfo(iata: any): Observable<Airport> {
     let params = new HttpParams()
     params = params.append("iata", iata)
-    return this.http.get<any>(this.url, {headers: this.headers, params: params}).pipe(
+    return this.http.get<Airport>(this.url, {headers: this.headers, params: params}).pipe(
       retry(1),
       catchError(err => {
         throw 'Error from Airport service' + err;

@@ -8,9 +8,9 @@
       </mat-button-toggle>
     </mat-form-field>
   </form>
-  <ng-container *ngFor="let items of data | keyvalue">
+  <ng-container *ngFor="let detail of airportInfo | keyvalue">
     <p>
-      {{items.key}} - {{items.value}}
+      {{detail.key}} - {{detail.value}}
     </p>
   </ng-container>
 </div>
