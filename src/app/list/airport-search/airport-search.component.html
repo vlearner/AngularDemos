@@ -8,10 +8,17 @@
       </mat-button-toggle>
     </mat-form-field>
   </form>
-  <ng-container *ngFor="let detail of airportInfo | keyvalue">
-    <p>
-      {{detail.key}} - {{detail.value}}
+  <ng-container *ngIf="airportInfo">
+   <h3 style="margin-bottom: 1%">{{airportInfo.name}}</h3>
+    <mat-divider></mat-divider><br>
+    <p>Location: {{airportInfo.location}}<br>
+      State: {{airportInfo.state}}<br>
+      Country: {{airportInfo.country}}<br>
+      Website: {{airportInfo.website}}<br>
+      Contact: {{airportInfo.phone}}<br>
     </p>
+    <mat-divider></mat-divider>
+    <mat-divider></mat-divider>
   </ng-container>
 </div>
 

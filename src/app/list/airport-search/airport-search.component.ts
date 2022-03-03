@@ -1,7 +1,8 @@
 import { Component} from '@angular/core';
-import {AirportSearchService} from "./airport-search.service";
-import { Subscription} from "rxjs";
-import {Airport} from "./airport";
+import {AirportSearchService} from './airport-search.service';
+import { Subscription} from 'rxjs';
+import {Airport} from './airport';
+
 
 @Component({
   selector: 'app-airport-search',
@@ -9,6 +10,8 @@ import {Airport} from "./airport";
   styleUrls: ['./airport-search.component.scss']
 })
 export class AirportSearchComponent {
+  private error: any;
+
 
   constructor(private airportService: AirportSearchService) {}
   airportServiceSub: Subscription | any;
@@ -17,9 +20,11 @@ export class AirportSearchComponent {
   airportInfo: Airport;
 
   searchSubmit() {
-    this.airportServiceSub = this.airportService.getAirportInfo(this.search).subscribe(data => {
-      // console.log(JSON.stringify(data));
+    this.airportServiceSub = this.airportService.getAirportInfo(this.search).subscribe((data) => {
+      console.log(JSON.stringify(data));
       this.airportInfo = data;
+    }, error => {
+      this.error = error;
     });
   }
 
