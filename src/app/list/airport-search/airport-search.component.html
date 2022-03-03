@@ -1,7 +1,7 @@
 <div style="margin: 5vh;">
   <form>
     <mat-form-field class="example-form-field" appearance="legacy">
-      <mat-label>Search IATA Number</mat-label>
+      <mat-label>Search Airport by IATA Number</mat-label>
       <input matInput aria-label="Search" (keyup.enter)="keySearch()" type="text" name="search" [(ngModel)]="search">
       <mat-button-toggle  matSuffix aria-label="Submit" (click)="searchSubmit()" mat-icon-button >
         <mat-icon>search</mat-icon>
@@ -16,6 +16,7 @@
       Country: {{airportInfo.country}}<br>
       Website: {{airportInfo.website}}<br>
       Contact: {{airportInfo.phone}}<br>
+      ICAO No: {{airportInfo.icao}}
     </p>
     <mat-divider></mat-divider>
     <mat-divider></mat-divider>
