@@ -1,3 +1,9 @@
 .example-form-field {
   width: 80%;
 }
+
+//https://stackoverflow.com/a/68240841
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
+}
