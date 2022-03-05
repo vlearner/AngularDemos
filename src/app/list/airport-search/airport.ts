@@ -17,4 +17,8 @@ export interface Airport {
   longitude: number;
   uct: number;
   website: string;
+  error: error[];
+}
+export interface error {
+  text: string;
 }

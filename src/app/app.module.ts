@@ -14,6 +14,7 @@ import {MatInputModule} from "@angular/material/input";
 import {HttpClientModule} from "@angular/common/http";
 import {MatButtonToggleModule} from "@angular/material/button-toggle";
 import {FormsModule} from "@angular/forms";
+import {MatButtonModule} from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import {FormsModule} from "@angular/forms";
     MatInputModule,
     HttpClientModule,
     MatButtonToggleModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule
 
   ],
   exports: [],
